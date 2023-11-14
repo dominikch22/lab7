@@ -50,6 +50,7 @@ namespace lab7
             this.clearButton = new System.Windows.Forms.Button();
             this.hashButton = new System.Windows.Forms.Button();
             this.equelsButton = new System.Windows.Forms.Button();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // aRealTextBox
@@ -71,9 +72,8 @@ namespace lab7
             this.operationLabel.AutoSize = true;
             this.operationLabel.Location = new System.Drawing.Point(249, 58);
             this.operationLabel.Name = "operationLabel";
-            this.operationLabel.Size = new System.Drawing.Size(13, 13);
+            this.operationLabel.Size = new System.Drawing.Size(0, 13);
             this.operationLabel.TabIndex = 2;
-            this.operationLabel.Text = "+";
             // 
             // bRealTextBox
             // 
@@ -102,7 +102,7 @@ namespace lab7
             // 
             this.resultTextBox.Location = new System.Drawing.Point(501, 55);
             this.resultTextBox.Name = "resultTextBox";
-            this.resultTextBox.Size = new System.Drawing.Size(98, 20);
+            this.resultTextBox.Size = new System.Drawing.Size(138, 20);
             this.resultTextBox.TabIndex = 6;
             // 
             // label3
@@ -158,6 +158,7 @@ namespace lab7
             this.additionButton.TabIndex = 14;
             this.additionButton.Text = "+";
             this.additionButton.UseVisualStyleBackColor = true;
+            this.additionButton.Click += new System.EventHandler(this.additionButton_Click);
             // 
             // substractionButton
             // 
@@ -167,6 +168,7 @@ namespace lab7
             this.substractionButton.TabIndex = 15;
             this.substractionButton.Text = "-";
             this.substractionButton.UseVisualStyleBackColor = true;
+            this.substractionButton.Click += new System.EventHandler(this.substractionButton_Click);
             // 
             // multiplicationButton
             // 
@@ -176,6 +178,7 @@ namespace lab7
             this.multiplicationButton.TabIndex = 16;
             this.multiplicationButton.Text = "*";
             this.multiplicationButton.UseVisualStyleBackColor = true;
+            this.multiplicationButton.Click += new System.EventHandler(this.multiplicationButton_Click);
             // 
             // divisionButton
             // 
@@ -185,6 +188,7 @@ namespace lab7
             this.divisionButton.TabIndex = 17;
             this.divisionButton.Text = "/";
             this.divisionButton.UseVisualStyleBackColor = true;
+            this.divisionButton.Click += new System.EventHandler(this.divisionButton_Click);
             // 
             // biggerDistanceButton
             // 
@@ -194,6 +198,7 @@ namespace lab7
             this.biggerDistanceButton.TabIndex = 18;
             this.biggerDistanceButton.Text = "> (porównaj dystans)";
             this.biggerDistanceButton.UseVisualStyleBackColor = true;
+            this.biggerDistanceButton.Click += new System.EventHandler(this.biggerDistanceButton_Click);
             // 
             // samallerDistanceButton
             // 
@@ -203,6 +208,7 @@ namespace lab7
             this.samallerDistanceButton.TabIndex = 19;
             this.samallerDistanceButton.Text = "<  (porównaj dystans)";
             this.samallerDistanceButton.UseVisualStyleBackColor = true;
+            this.samallerDistanceButton.Click += new System.EventHandler(this.samallerDistanceButton_Click);
             // 
             // clearButton
             // 
@@ -212,6 +218,7 @@ namespace lab7
             this.clearButton.TabIndex = 20;
             this.clearButton.Text = "C";
             this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // hashButton
             // 
@@ -221,6 +228,7 @@ namespace lab7
             this.hashButton.TabIndex = 21;
             this.hashButton.Text = "hash";
             this.hashButton.UseVisualStyleBackColor = true;
+            this.hashButton.Click += new System.EventHandler(this.hashButton_Click);
             // 
             // equelsButton
             // 
@@ -230,12 +238,23 @@ namespace lab7
             this.equelsButton.TabIndex = 22;
             this.equelsButton.Text = "=";
             this.equelsButton.UseVisualStyleBackColor = true;
+            this.equelsButton.Click += new System.EventHandler(this.equelsButton_Click);
+            // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.ForeColor = System.Drawing.Color.OrangeRed;
+            this.errorLabel.Location = new System.Drawing.Point(36, 81);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(0, 13);
+            this.errorLabel.TabIndex = 23;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 183);
+            this.ClientSize = new System.Drawing.Size(676, 183);
+            this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.equelsButton);
             this.Controls.Add(this.hashButton);
             this.Controls.Add(this.clearButton);
@@ -288,6 +307,7 @@ namespace lab7
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button hashButton;
         private System.Windows.Forms.Button equelsButton;
+        private System.Windows.Forms.Label errorLabel;
     }
 }
 

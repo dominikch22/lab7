@@ -52,21 +52,21 @@ namespace lab7
 
         public static bool operator >(ComplexNumber a, ComplexNumber b)
         {
-            return Math.Sqrt(a['r'] * a['r'] + a['i'] + a['i']) > Math.Sqrt(b['r'] * b['r'] + b['i'] + b['i']);
+            return Math.Sqrt(a['r'] * a['r'] + a['i'] * a['i']) > Math.Sqrt(b['r'] * b['r'] + b['i'] * b['i']);
         }
 
         public static bool operator <(ComplexNumber a, ComplexNumber b)
         {
-            return Math.Sqrt(a['r'] * a['r'] + a['i'] + a['i']) < Math.Sqrt(b['r'] * b['r'] + b['i'] + b['i']);
+            return Math.Sqrt(a['r'] * a['r'] + a['i'] * a['i']) < Math.Sqrt(b['r'] * b['r'] + b['i'] * b['i']);
         }
 
-        public static explicit operator ComplexNumber(double number) {
+        public static implicit operator ComplexNumber(double number) {
             return new ComplexNumber(number, 0);
         }
 
-        public static implicit operator double(ComplexNumber number) {
+        public static explicit operator double(ComplexNumber number) {
             return number['r'];
-        }
+        }  
 
         public double this[int index]
         {
@@ -111,6 +111,16 @@ namespace lab7
                     throw new ArgumentOutOfRangeException("Index 'r' and 'i' are only available");
             }
 
+        }
+
+        public override string ToString()
+        {
+            if (this['i'] == 0)
+                return ((double)this).ToString();
+            else if (this['r'] == 0)
+                return $"{this['i']}i";
+            else
+                return $"{this['r']} + {this['i']}i";
         }
 
         public override bool Equals(object obj)
